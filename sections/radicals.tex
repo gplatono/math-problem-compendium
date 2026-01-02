@@ -1,0 +1,349 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{exercise}(1989 AIME, p.1)
+Compute $\sqrt{31 \cdot 30 \cdot 29 \cdot 28 + 1}$.
+\end{exercise}
+\begin{solution}
+\begin{align*}
+\sqrt{31 \cdot 30 \cdot 29 \cdot 28 + 1} &= \sqrt{29 \cdot 30 \cdot (29 - 1) \cdot (30 + 1) + 1} = \sqrt{29 \cdot 30 \cdot (29 \cdot 30 - 2) + 1} \\
+&= \sqrt{(29 \cdot 30)^2 - 2\cdot 29 \cdot 30 + 1} = \sqrt{(29\cdot 30 - 1)^2} = 29 \cdot 30 - 1 = 869.
+\end{align*}
+\end{solution}
+
+\begin{exercise}(2003 Harvard-MIT Math Tournament, Guts Round, p.7)
+$a$ and $b$ are integers such that $a + \sqrt{b} = \sqrt{15 + \sqrt{216}}$. Compute $a/b$.
+\end{exercise}
+\begin{solution}
+    $a + \sqrt{b} = \sqrt{15 + \sqrt{216}} = \sqrt{15 + 6 \sqrt{6}} = \sqrt{9 + 2\cdot 3\cdot \sqrt{6} + 6} = \sqrt{(3 + \sqrt{6})^2} = 3 + \sqrt{6}$. We can rewrite it as $\sqrt{b} = 3 - a + \sqrt{6}$, or $b = (3 - a)^2 + 2(3-a)\sqrt{6} + 6$. Then $2(3 - a)\sqrt{6} = b - (3 - a)^2 - 6$. Note that the right-hand side is an integer. On the other hand, a product of an irrational number and a non-zero rational number cannot be rational, so the left side can be equal to an integer if and only if it is zero. That is, $a - 3 = 0$, or $a = 3$. This gives $b = 6$. Hence, $a/b = 1/2$.
+\end{solution}
+
+\begin{exercise}(2011 AMC 10 A, p.16) Which of the following is equal to $\sqrt{9 - 6\sqrt{2}} + \sqrt{9 + 6\sqrt{2}}$?
+
+A) $3\sqrt{2}$ \hspace{10mm} B) $2\sqrt{6}$ \hspace{10mm} C) $7\sqrt{2} / 2$ \hspace{10mm} D) $3\sqrt{3}$ \hspace{10mm} E) 6
+\end{exercise}
+\begin{solution}
+    $\sqrt{9 - 6\sqrt{2}} + \sqrt{9 + 6\sqrt{2}} = \sqrt{3(3 - 2\sqrt{2})} + \sqrt{3(3 + 2\sqrt{2})} = \sqrt{3(\sqrt{2} - 1)^2} + \sqrt{3(\sqrt{2} + 1)^2} = \sqrt{3}(\sqrt{2} - 1 + \sqrt{2} + 1) = 2\sqrt{6}$. The correct answer is B).
+\end{solution}
+
+\begin{exercise} (1999 Middle School Math Contest, Shandong Province, China) The closest integer to $\frac{1}{\sqrt{17 - 12\sqrt{2}}}$ is:
+A) 5 \hspace{10mm} B) 6 \hspace{10mm} C) 7 \hspace{10mm} D) 8
+\end{exercise}
+\begin{solution}
+    $\frac{1}{\sqrt{17 - 12\sqrt{2}}} = \frac{1}{\sqrt{9 + 8 - 2\cdot 3 \cdot 2\sqrt{2}}} = \frac{1}{\sqrt{(3 - 2\sqrt{2})^2}} = \frac{1}{3 - 2\sqrt{2}}$. Note that $2.82 < 2\sqrt{2} < 2.83$, and $0.17 < 3 - 2\sqrt{2} < 0.18$. Given that $1/5 = 0.2, 1/6 = 0.1(6), 1/7 < 0.15, 1/8 = 0.125$, it follows that $6$ is the closest integer to $\frac{1}{3 - 2\sqrt{2}}$. The correct answer is B).
+\end{solution}
+
+\begin{exercise} (2003 Middle School Math Contest, Tianjun City, China) Simplify: $2\sqrt{4 + 2\sqrt{3}} - \sqrt{21 - 12\sqrt{3}}$.
+
+A) $5 - 4\sqrt{3}$ \hspace{10mm} B) $4\sqrt{3} - 1$ \hspace{10mm} C) 5 \hspace{10mm} D) 1
+\end{exercise}
+\begin{solution}
+    $2\sqrt{4 + 2\sqrt{3}} - \sqrt{21 - 12\sqrt{3}} = 2\sqrt{3 + 1 + 2\sqrt{3}} - \sqrt{12 + 9 - 2 \cdot 3 \cdot 2\sqrt{3}} = 2\sqrt{(\sqrt{3} + 1)^2} - \sqrt{(2\sqrt{3} - 3)^2} = 2\sqrt{3} + 2 - 2\sqrt{3} + 3 = 5$. The right answer is C).
+\end{solution}
+
+\begin{exercise}(2010 Romanian Math Olympiad, Grade 7, Local Round, Giurgiu)
+Show that the number $a = \sqrt{124 + 11\sqrt{12}} + \sqrt{28 - 5
+\sqrt{12}}$ is a perfect square.
+\end{exercise}
+\begin{solution}
+    $\sqrt{124 + 11\sqrt{12}} + \sqrt{28 - 5
+\sqrt{12}} = \sqrt{11^2 + 3 + 2\cdot 11\sqrt{3}} + \sqrt{5^2 + 3 - 2\cdot5 \sqrt{3}} = \sqrt{(11 + \sqrt{3})^2} + \sqrt{(5 - \sqrt{3})^2} = 11 + \sqrt{3} + 5 - \sqrt{3} = 16 = 4^2$.
+\end{solution}
+
+\begin{exercise} (1993 New Mexico Mathematics Contest, p.5)
+
+a) Find positive integers u and v satisfying $\sqrt{18 - 2\sqrt{65}} = \sqrt{u} - \sqrt{v}$.
+
+b)  Find positive integers x and y satisfying: $\sqrt{14 + 3\sqrt{3 + 2\sqrt{5 - 12\sqrt{3 - 2\sqrt{2}}}}} = x + \sqrt{y}$.    
+\end{exercise}
+\begin{solution}
+a) $\sqrt{18 - 2\sqrt{65}} = \sqrt{13 + 5 - 2\sqrt{5}\sqrt{13}} = \sqrt{(\sqrt{13} - \sqrt{5})^2} = \sqrt{13} - \sqrt{5}$. $u = 13, v = 5$.
+
+b) $\sqrt{3 - 2\sqrt{2}} = \sqrt{2 + 1 - 2\sqrt{2}} = \sqrt{(\sqrt{2} - 1)^2} = \sqrt{2} - 1$. Then $\sqrt{5 - 12\sqrt{3 - 2\sqrt{2}}} = \sqrt{5 - 12(\sqrt{2} - 1)} = \sqrt{17 - 12\sqrt{2}} = \sqrt{9 + 8 - 2\cdot 3 \cdot 2\sqrt{2}} = \sqrt{(3 - 2\sqrt{2})^2} = 3 - 2\sqrt{2}$. Next, $\sqrt{3 + 2(3 - 2\sqrt{2})} = \sqrt{9 - 4\sqrt{2}} = \sqrt{8 + 1 - 2 \cdot 2\sqrt{2}} = \sqrt{(2\sqrt{2} - 1)^2} = 2\sqrt{2} - 1$. Finally, $\sqrt{14 + 3(2\sqrt{2} - 1)} = \sqrt{11 + 6\sqrt{2}} = \sqrt{9 + 2 + 2\cdot 3\sqrt{2}} = \sqrt{(3 + \sqrt{2})^2} = 3 + \sqrt{2}$. Thus, $x = 3, y = 2$ is one pair of such integers.
+\end{solution}
+
+\begin{exercise}(1990 AIME, p.2)
+    Find the value of $(52 + 6\sqrt{43})^{3/2} - (52 - 6\sqrt{43})^{3/2}$.
+\end{exercise}
+\begin{solution}
+    Note that $52 \pm 6\sqrt{43} = (\sqrt{43} \pm 3)^2$. This yields 
+    \begin{align*}
+        (52 + 6\sqrt{43})^{3/2} - (52 - 6\sqrt{43})^{3/2} &= (\sqrt{43} + 3)^{2 \cdot 3/2} - (\sqrt{43} - 3)^{2 \cdot 3/2} \\
+        &= (\sqrt{43} + 3)^3 - (\sqrt{43} - 3)^3 = 6((\sqrt{43} + 3)^2 + (\sqrt{43} + 3)(\sqrt{43} - 3) + (\sqrt{43} - 3)^2) \\
+        &= 6(52 + 6\sqrt{43} + 43 - 9 + 52 - 6\sqrt{43}) = 6 \cdot 138 = 828.
+    \end{align*}
+\end{solution}
+
+\begin{exercise}(2006 AIME I, p.5)
+    The number $\sqrt{104\sqrt{6} + 468\sqrt{10} + 144\sqrt{15} + 2006}$ can be written as $a\sqrt{2} + b\sqrt{3} + c\sqrt{5}$, where $a, b$ and $c$ are positive integers. Find $abc$.
+\end{exercise}
+\begin{solution}
+    The statement implies that $104\sqrt{6} + 468\sqrt{10} + 144\sqrt{15} + 2006 = (a\sqrt{2} + b\sqrt{3} + c\sqrt{5})^2 = 2a^2 + 3b^2 + 5c^2 + 2ab\sqrt{6} + 2bc\sqrt{15} + 2ac\sqrt{10}$. Equating the corresponding radicals, we obtain $ab = 52, bc = 72, ac = 234$. This implies $(abc)^2 = ab \cdot bc \cdot ac = 52 \cdot 72 \cdot 234 = 13 \cdot 4 \cdot 9 \cdot 8 \cdot 2 \cdot 9 \cdot 13 = 13^2 \cdot 8^2 \cdot 9^2$. Hence, $abc = 13 \cdot 8 \cdot 9 = 936$.
+\end{solution}
+
+\begin{exercise}(2005 USAMTS, Round 4, Problem 2/4/16)
+Find positive integers $a, b$, and $c$ such that:
+\[\sqrt{a} + \sqrt{b} + \sqrt{c} = \sqrt{219 + \sqrt{10080} + \sqrt{12600} + \sqrt{35280}}.\]
+This is another form of the famous problem attributed to the Indian mathematician Bhaskara.
+\end{exercise}
+\begin{solution}
+    Note that $219 + \sqrt{10080} + \sqrt{12600} + \sqrt{35280} = (\sqrt{a} + \sqrt{b} + \sqrt{c})^2 = a + b + c + 2\sqrt{ab} + 2\sqrt{bc} + 2\sqrt{ac}$. Hence, we get
+    \begin{align*}
+        a + b + c + 2\sqrt{ab} + 2\sqrt{bc} + 2\sqrt{ac} &= 219 + \sqrt{10080} + \sqrt{12600} + \sqrt{35280} \\
+        &=219 + 2\sqrt{2520} + 2\sqrt{3150} + 2\sqrt{8820} \\
+        &=219 + 2\sqrt{7\cdot 3^2 \cdot 2^3 \cdot 5} + 2\sqrt{7 \cdot 3^2 \cdot 5^2 \cdot 2} + 2\sqrt{7^2 \cdot 3^2 \cdot 2^2 \cdot 5}.
+    \end{align*}
+\end{solution}
+Since each radical contains $3^2$, it follows that all numbers $a, b, c$ are multiples of 3. Two radicals contain 7, and only one $7^2$, which implies that two numbers are precisely the multiples of 7. Similarly with 5. Moreover, based on the combinations of 5s and 7s, exactly one number is a multiple of both 5 and 7. Finally, the number that is a multiple of 5 and 3 must also be a multiple of 2, and the number that is a multiple of 7 and 3 is a multiple of $2^2$. This gives us the values $a = 7 \cdot 5 \cdot 3 = 105, b = 7 \cdot 3 \cdot 2^2 = 84, c = 5 \cdot 3 \cdot 2 = 30$, which sum to 219, as they should. Obviously, any permutation of these values is also the correct answer.
+
+\begin{exercise}(2012 Exeter Math Club Competition, Individual Accuracy Test, p.9)
+
+Let $f(x) = \sqrt{2x + 1 + 2\sqrt{x^2 + x}}$. Determine the value of $\frac{1}{f(1)} + \frac{1}{f(2)} + ... + \frac{1}{f(24)}$.
+\end{exercise}
+\begin{solution}
+Note that $f(x) = \sqrt{(\sqrt{x+1} + \sqrt{x})^2} = |\sqrt{x+1} + \sqrt{x}| = \sqrt{x+1} + \sqrt{x}$. Next, $\frac{1}{f(x)} = \frac{1}{\sqrt{x+1} + \sqrt{x}} = \frac{\sqrt{x + 1} - \sqrt{x}}{(\sqrt{x+1} + \sqrt{x})(\sqrt{x+1} - \sqrt{x})} = \frac{\sqrt{x+1} - \sqrt{x}}{x + 1 - x} = \sqrt{x+1} - \sqrt{x}$.
+
+The above yields $\frac{1}{f(1)} + ... + \frac{1}{f(24)} = (\sqrt{2} - \sqrt{1}) + (\sqrt{3} - \sqrt{2}) + ... + (\sqrt{25} - \sqrt{24}) = \sqrt{25} - \sqrt{1} = 4$.
+\end{solution}
+
+\begin{exercise}
+    For any positive integer $n$, let $f(n) = \frac{4n + \sqrt{4n^2 - 1}}{\sqrt{2n + 1} + \sqrt{2n - 1}}$. Evaluate the sum $f(1) + f(2) + ... + f(40)$.
+\end{exercise}
+\begin{solution}
+    \begin{align*}
+        f(n) &= \frac{4n + \sqrt{4n^2 - 1}}{\sqrt{2n + 1} + \sqrt{2n - 1}} \\
+        &= \frac{(2n + 1) + (2n - 1) + \sqrt{(2n + 1)(2n - 1)}}{\sqrt{2n + 1} + \sqrt{2n - 1}} \\
+        &= \frac{((2n + 1) + (2n - 1) + \sqrt{(2n + 1)(2n - 1)})(\sqrt{2n + 1} - \sqrt{2n - 1})}{(\sqrt{2n + 1} + \sqrt{2n - 1})(\sqrt{2n + 1} - \sqrt{2n - 1})} \\
+        &= \frac{(2n + 1)^{3/2} - (2n - 1)^{3/2}}{(2n + 1) - (2n - 1)} = \frac{1}{2}(2n + 1)^{3/2} - \frac{1}{2}(2n - 1)^{3/2}.
+    \end{align*}
+Next, $f(1) + ... + f(40) = \frac{1}{2}3^{3/2} - \frac{1}{2}1^{3/2} + \frac{1}{2}5^{3/2} - \frac{1}{2}3^{3/2} + ... + \frac{1}{2}81^{3/2} - \frac{1}{2}79^{3/2} = \frac{1}{2}81^{3/2} - \frac{1}{2} 1^{3/2} = \frac{1}{2}(729 - 1) = 364$.
+\end{solution}
+
+\begin{exercise}(2005 AIME II, p.7)
+Let $x = \frac{4}{(\sqrt{5} + 1)(\sqrt[4]{5} + 1)(\sqrt[8]{5} + 1)(\sqrt[16]{5} + 1)}$. Find $(x + 1)^{48}$.
+\end{exercise}
+\begin{solution}
+    \begin{align*}
+        x &= \frac{4(\sqrt[16]{5} - 1)}{(\sqrt{5} + 1)(\sqrt[4]{5} + 1)(\sqrt[8]{5} + 1)(\sqrt[16]{5} + 1)(\sqrt[16]{5} - 1)} 
+        = \frac{4(\sqrt[16]{5} - 1)}{(\sqrt{5} + 1)(\sqrt[4]{5} + 1)(\sqrt[8]{5} + 1)(\sqrt[8]{5} - 1)} \\
+        &= \frac{4(\sqrt[16]{5} - 1)}{(\sqrt{5} + 1)(\sqrt[4]{5} + 1)(\sqrt[4]{5} - 1)}
+        = \frac{4(\sqrt[16]{5} - 1)}{(\sqrt{5} + 1)(\sqrt{5} - 1)} = \frac{4(\sqrt[16]{5} - 1)}{(5 - 1)} = \sqrt[16]{5} - 1.
+    \end{align*}
+    Hence, $(x + 1)^{48} = (\sqrt[16]{5} - 1 + 1)^{48} = 5^3 = 125$.
+\end{solution}
+
+\begin{exercise}(1975 AMC 12, p.29)
+What is the smallest integer larger than $(\sqrt{3} + \sqrt{2})^6$?
+\newline
+(A) 972 \hspace{10mm} (B) 971 \hspace{10mm} (C) 970 \hspace{10mm} (D) 969 \hspace{10mm} (E) 968
+\end{exercise}
+\begin{solution}
+    $(\sqrt{2} + \sqrt{3})^6 = (2 + 3 + 2\sqrt{6})^3 = 125 + 150\sqrt{6} + 360 + 48\sqrt{6} = 485 + 198\sqrt{6}$. Now, take any integer $x$. If $x > 485 + 198\sqrt{6}$, then $x - 485 - 198\sqrt{6} = \frac{((x - 485) - 198\sqrt{6})((x - 485) + 198\sqrt{6})}{(x - 485) + 198\sqrt{6}} = \frac{(x - 485)^2 - 6\cdot 198^2}{(x - 485) + 198\sqrt{6}} > 0$. Since for all the given options (A)-(D), the denominator is positive, it is sufficient to find, among the given numbers, the smallest such number that $(x - 485)^2 - 6\cdot 198^2 = (x - 485)^2 - 235224$ is positive. By checking every option directly, we find that $(970 - 485)^2 - 252224 = 1$, that is, 970 is the required number. The answer is (C).
+\end{solution}
+
+\begin{exercise}(2005 UK Senior Mathematical Challenge, p.25)
+Which of the following is equal to $\frac{1}{\sqrt{2005 + \sqrt{2005^2 - 1}}}$? \newline
+(A) $\sqrt{1003} - \sqrt{1002}$ \hspace{10mm} (B) $\sqrt{1005} - \sqrt{1004}$ \hspace{10mm} (C) $\sqrt{1007} - \sqrt{1005}$ \hspace{10mm} (D) $\sqrt{2005} - \sqrt{2003}$ \hspace{10mm} (E) $\sqrt{2007} - \sqrt{2005}$
+\end{exercise}
+\begin{solution}
+    $\frac{1}{\sqrt{2005 + \sqrt{2005^2 - 1}}} = \frac{1}{\sqrt{2005 + \sqrt{2004 \cdot 2006}}} = \frac{1}{\sqrt{2005 + 2\sqrt{1002}\sqrt{1003}}} = \frac{1}{\sqrt{(\sqrt{1003} + \sqrt{1002})^2}} = \frac{1}{\sqrt{1003} + \sqrt{1002}} = \frac{\sqrt{1003} - \sqrt{1002}}{(\sqrt{1003} + \sqrt{1002})(\sqrt{1003} - \sqrt{1002})} = \sqrt{1003} - \sqrt{1002}$. Thus, the answer is (A).
+\end{solution}
+
+\begin{exercise}(1992 UK National Mathematics Contest, p.25)
+If $x = \sqrt{1 + 1992^2 + \frac{1992^2}{1993^2}} + \frac{1992}{1993}$, then which statement is true?
+\newline
+(A) $1992 < x < 1993$ \hspace{10mm} (B) $x = 1993$ \hspace{10mm} (C) $1993 < x < 1994$ \hspace{10mm} (D) $x = 1994$ \hspace{10mm} (E) $x > 1994$
+\end{exercise}
+\begin{solution}
+    Note that $1 + 1992^2 + \frac{1992^2}{1993^2} = (1 + 1992^2 + 2\cdot 1992) - 2\cdot 1992 + \frac{1992^2}{1993^2} = 1993^2 - 2\cdot 1992 +  \frac{1992^2}{1993^2} = (1993 - \frac{1992}{1993})^2$. Hence, $x = \sqrt{1 + 1992^2 + \frac{1992^2}{1993^2}} + \frac{1992}{1993} = \sqrt{(1993 - \frac{1992}{1993})^2} + \frac{1992}{1993} = 1993 - \frac{1992}{1993} + \frac{1992}{1993} = 1993$. The answer is (B).
+\end{solution}
+
+\begin{exercise}(1974 AMC 12, p.20)
+Let $T = \frac{1}{3 - \sqrt{8}} - \frac{1}{\sqrt{8} - \sqrt{7}} + \frac{1}{\sqrt{7} - \sqrt{6}} - \frac{1}{\sqrt{6} - \sqrt{5}} + \frac{1}{\sqrt{5} - 2}$. Then:
+\newline
+(A) $T < 1$ \hspace{5mm} (B) $T = 1$ \hspace{5mm} (C) $1 < T < 2$ \hspace{5mm} (D) $T > 2$ \hspace{5mm}
+(E) $T = \frac{1}{(3 - \sqrt{8})(\sqrt{8} - \sqrt{7})(\sqrt{7} - \sqrt{6})(\sqrt{6} - \sqrt{5})(\sqrt{5} - 2)}$.
+\end{exercise}
+\begin{solution}
+    Note that $\frac{1}{\sqrt{x+1} - \sqrt{x}} = \frac{\sqrt{x+1} + \sqrt{x}}{(\sqrt{x+1} - \sqrt{x})(\sqrt{x+1} + \sqrt{x})} = \frac{\sqrt{x+1} + \sqrt{x}}{x+1 - x} = \sqrt{x+1} + \sqrt{x}$. Then $T = \frac{1}{\sqrt{9} - \sqrt{8}} - \frac{1}{\sqrt{8} - \sqrt{7}} + \frac{1}{\sqrt{7} - \sqrt{6}} - \frac{1}{\sqrt{6} - \sqrt{5}} + \frac{1}{\sqrt{5} - \sqrt{4}} = (\sqrt{9} + \sqrt{8}) - (\sqrt{8} + \sqrt{7}) + (\sqrt{7} + \sqrt{6}) - (\sqrt{6} + \sqrt{5}) + (\sqrt{5} + \sqrt{4}) = \sqrt{9} + \sqrt{4} = 5$. So, the answer is (D). Note that (E) cannot be the answer since $\frac{1}{(3 - \sqrt{8})(\sqrt{8} - \sqrt{7})(\sqrt{7} - \sqrt{6})(\sqrt{6} - \sqrt{5})(\sqrt{5} - 2)} = (\sqrt{9} + \sqrt{8})(\sqrt{8} + \sqrt{7})(\sqrt{7} + \sqrt{6})(\sqrt{6} + \sqrt{5})(\sqrt{5} + \sqrt{4}) > 2\sqrt{8} \cdot 2 \sqrt{7} \cdot 2 \sqrt{6} \cdot 2\sqrt{5} \cdot 2\sqrt{4} > 2^5 (\sqrt{4})^5 = 2^{10} = 1024 > T$.
+\end{solution}
+
+\begin{exercise}(1976 AMC 12, p.27)
+    If $N = \frac{\sqrt{\sqrt{5} + 2} + \sqrt{\sqrt{5} - 2}}{\sqrt{\sqrt{5} + 1}} - \sqrt{3 - 2\sqrt{2}}$, then $N$ equals:
+    \newline
+(A) 1 \hspace{10mm} (B) $2\sqrt{2} - 1$ \hspace{10mm} (C) $\frac{\sqrt{5}}{2}$ \hspace{10mm} (D) $\sqrt{\frac{5}{2}}$ \hspace{10mm} (E) none of these
+\end{exercise}
+\begin{solution}
+    \begin{align*}
+        N &= \frac{\sqrt{\sqrt{5} + 2} + \sqrt{\sqrt{5} - 2}}{\sqrt{\sqrt{5} + 1}} - \sqrt{3 - 2\sqrt{2}} 
+        = \frac{(\sqrt{\sqrt{5} + 2} + \sqrt{\sqrt{5} - 2})(\sqrt{\sqrt{5} - 1})}{(\sqrt{\sqrt{5} + 1})(\sqrt{\sqrt{5} - 1})} - \sqrt{(\sqrt{2} - 1)^2} \\
+        &= \frac{\sqrt{3 + \sqrt{5}} + \sqrt{7 - 3\sqrt{5}}}{\sqrt{5 - 1}} - (\sqrt{2} - 1)
+        = \frac{\sqrt{2}\sqrt{3 + \sqrt{5}} + \sqrt{2}\sqrt{7 - 3\sqrt{5}}}{2\sqrt{2}} - (\sqrt{2} - 1) \\
+        &= \frac{\sqrt{6 + 2\sqrt{5}} + \sqrt{14 - 6\sqrt{5}}}{2\sqrt{2}} - (\sqrt{2} - 1) 
+        = \frac{\sqrt{(\sqrt{5} + 1)^2} + \sqrt{(3 - \sqrt{5})^2}}{2\sqrt{2}} - (\sqrt{2} - 1) \\
+        &= \frac{\sqrt{5} + 1 + 3 - \sqrt{5}}{2\sqrt{2}} - (\sqrt{2} - 1) 
+        = \frac{4}{2\sqrt{2}} - (\sqrt{2} - 1) = \sqrt{2} - (\sqrt{2} - 1) = 1.
+    \end{align*}
+    Hence, the answer is (A).
+\end{solution}
+
+\begin{exercise}(2009 Georgia Tech High School Math Contest, Junior Varsity Multiple Choice, p.1)
+Simplify: $\frac{\sqrt{\sqrt{10} - 3} + \sqrt{\sqrt{10} + 3}}{\sqrt{\sqrt{10} + 1}}$.
+\newline
+(A) 1 \hspace{10mm} (B) $\sqrt{2}$ \hspace{10mm} (C) $\sqrt{3}$ \hspace{10mm} (D) 2 \hspace{10mm} (E) $2\sqrt{2}$    
+\end{exercise}
+\begin{solution}
+    \begin{align*}
+        \frac{\sqrt{\sqrt{10} - 3} + \sqrt{\sqrt{10} + 3}}{\sqrt{\sqrt{10} + 1}} &= \frac{(\sqrt{\sqrt{10} - 3} + \sqrt{\sqrt{10} + 3})\sqrt{\sqrt{10} + 1}}{\sqrt{\sqrt{10} + 1}\sqrt{\sqrt{10} + 1}} 
+        = \frac{\sqrt{7 - 2\sqrt{10}} + \sqrt{13 + 4\sqrt{10}}}{\sqrt{10} + 1} \\
+        &= \frac{\sqrt{14 - 4\sqrt{10}} + \sqrt{26 + 8\sqrt{10}}}{\sqrt{2}(\sqrt{10} + 1)} 
+        = \frac{\sqrt{(\sqrt{10} - 2)^2} + \sqrt{(\sqrt{10} + 4)^2}}{\sqrt{2}(\sqrt{10} + 1)} \\
+        &= \frac{\sqrt{10} - 2 + \sqrt{10} + 4}{\sqrt{2}(\sqrt{10} + 1)} 
+        = \frac{2(\sqrt{10} + 1)}{\sqrt{2}(\sqrt{10} + 1)} = \sqrt{2}.
+    \end{align*}
+    Hence, the answer is (B).
+\end{solution}
+
+\begin{exercise}(2012 Louisiana State University Math Contest, Open Session, p.17) 
+    $f(x) = x^2 + \sqrt{x^4 + 1} + \frac{1}{x^2 - \sqrt{x^4 + 1}}$. Find $f(2011^{2012})$.
+\end{exercise}
+\begin{solution}
+    $f(x) = x^2 + \sqrt{x^4 + 1} + \frac{1}{x^2 - \sqrt{x^4 + 1}} = x^2 + \sqrt{x^4 + 1} + \frac{x^2 + \sqrt{x^4 + 1}}{(x^2 - \sqrt{x^4 + 1})(x^2 + \sqrt{x^4 + 1})} = x^2 + \sqrt{x^4 + 1} + \frac{x^2 + \sqrt{x^4 + 1}}{(x^4 - (x^4 + 1))} = x^2 + \sqrt{x^4 + 1} - (x^2 + \sqrt{x^4 + 1}) = 0$. That is, $f(2011^{2012}) = 0$.
+\end{solution}
+
+\begin{exercise}(1991 AMC 12, p.27) If $x + \sqrt{x^2 - 1} + \frac{1}{x - \sqrt{x^2 - 1}} = 20$, then $x^2 + \sqrt{x^4 - 1} + \frac{1}{x^2 +
+\sqrt{x^4 - 1}} = $ 
+\newline
+(A) 5.05 \hspace{10mm} (B) 20 \hspace{10mm} (C) 51.005 \hspace{10mm} (D) 61.25 \hspace{10mm} (E) 400
+\end{exercise}
+\begin{solution}
+    Note that $x + \sqrt{x^2 - 1} + \frac{1}{x - \sqrt{x^2 - 1}} = x + \sqrt{x^2 - 1} + \frac{x + \sqrt{x^2 - 1}}{(x - \sqrt{x^2 - 1})(x + \sqrt{x^2 - 1})} = x + \sqrt{x^2 - 1} + \frac{x + \sqrt{x^2 - 1}}{x^2 - (x^2 - 1)} = 2(x + \sqrt{x^2 - 1}) = 20$. Hence, $x^2 - 1 = (10 - x)^2$, which yields $x = 5.05$.
+
+    Now, $x^2 + \sqrt{x^4 - 1} + \frac{1}{x^2 + \sqrt{x^4 - 1}} = x^2 + \sqrt{x^4 - 1} + \frac{x^2 - \sqrt{x^4 - 1}}{(x^2 + \sqrt{x^4 - 1})(x^2 - \sqrt{x^4 - 1})} = x^2 + \sqrt{x^4 - 1} + \frac{x^2 - \sqrt{x^4 - 1}}{x^4 - (x^4 - 1)} = 2x^2 = 51.005$, so the answer is (C).
+\end{solution}
+
+\begin{exercise}(2018 Awesome Math Summer Program, Admission Test C, p.5)
+Let a, b, and c be positive real numbers such that $\sqrt{a} + 9\sqrt{b} + 44\sqrt{c} = \sqrt{2018(a + b + c)}$. Evaluate $\frac{b + c}{a}$.    
+\end{exercise}
+\begin{solution}
+    TODO!!!
+\end{solution}
+
+\begin{exercise}(1980 AMC 12, p.27)
+The sum $\sqrt[3]{5 + 2\sqrt{13}} + \sqrt[3]{5 - 2\sqrt{13}}$ equals:
+\newline
+(A) $\frac{3}{2}$ \hspace{10mm} (B) $\frac{\sqrt[3]{65}}{4}$ \hspace{10mm} (C) $\frac{1 + \sqrt[6]{13}}{2}$ \hspace{10mm} (D) $\sqrt[3]{2}$ \hspace{10mm} (E) none of these
+\end{exercise}
+\begin{solution}
+    Note that $5 + 2\sqrt{13} = \frac{8(5 + 2\sqrt{13})}{8} = \frac{(1 + \sqrt{13})^3}{8}$. Similarly, $5 - 2\sqrt{13} = \frac{(1 - \sqrt{13})^3}{8}$. Now, the expression simplifies to $\sqrt[3]{5 + 2\sqrt{13}} + \sqrt[3]{5 - 2\sqrt{13}} = \sqrt[3]{\frac{(1 + \sqrt{13})^3}{8}} + \sqrt[3]{\frac{(1 - \sqrt{13})^3}{8}} = \frac{1 + \sqrt{13}}{2} + \frac{1 - \sqrt{13}}{2} = 1$. Thus, the answer is (E).
+\end{solution}
+
+\begin{exercise}
+    Simplify: $\sqrt[3]{\sqrt{\frac{980}{27}} + 6} - \sqrt[3]{\sqrt{\frac{980}{27}} - 6}$.
+\end{exercise}
+\begin{solution}
+First, note that $\sqrt{\frac{980}{27}} = \frac{14}{3}\sqrt{\frac{5}{3}}$. Next, $\sqrt{\frac{980}{27}} + 6 = (\sqrt{\frac{5}{3}} + 1)^3$ and $\sqrt{\frac{980}{27}} - 6 = (\sqrt{\frac{5}{3}} - 1)^3$.
+
+Thus, $\sqrt[3]{\sqrt{\frac{980}{27}} + 6} - \sqrt[3]{\sqrt{\frac{980}{27}} - 6} = \sqrt[3]{(\sqrt{\frac{5}{3}} + 1)^3} - \sqrt[3]{(\sqrt{\frac{5}{3}} - 1)^3} = \sqrt{\frac{5}{3}} + 1 - (\sqrt{\frac{5}{3}} - 1) = 2$.
+\end{solution}
+
+\begin{exercise}(1943 Gazeta Matematica, Romania)
+Find $\sqrt[3]{20 + 14\sqrt{2}} + \sqrt[3]{20 - 14\sqrt{2}}$.
+\end{exercise}
+\begin{solution}
+    Note that $20 + 14\sqrt{2} = (2 + \sqrt{2})^3$ and $20 - 14\sqrt{2} = (2 - \sqrt{2})^3$. With these substitutions, the expression simplifies as follows: $\sqrt[3]{20 + 14\sqrt{2}} + \sqrt[3]{20 - 14\sqrt{2}} = \sqrt[3]{(2 + \sqrt{2})^3} + \sqrt[3]{(2 - \sqrt{2})^3} = 2 + \sqrt{2} + 2 - \sqrt{2} = 4$.
+\end{solution}
+
+\begin{exercise}(1971 Revista Matematica a Elevilor din Timisoara, Romania, proposed by Titu Andreescu)
+Prove the following:
+\begin{enumerate}
+    \item[a)] $\sqrt[5]{41 + 29\sqrt{2}} + \sqrt[5]{41 - 29\sqrt{2}} = 2$.
+    \item[b)] $\sqrt[6]{26 + 15\sqrt{3}} + \sqrt[6]{26 - 15\sqrt{3}} = \sqrt{6}$.
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+    \begin{enumerate}
+        \item[a)] Note that $(\sqrt{2} + 1)^5 = 41 + 29\sqrt{2}$ and $(1 - \sqrt{2})^5 = 41 - 29\sqrt{2}$. Then $\sqrt[5]{41 + 29\sqrt{2}} + \sqrt[5]{41 - 29\sqrt{2}} = \sqrt[5]{(1 + \sqrt{2})^5} + \sqrt[5]{(1 - \sqrt{2})^5} = 1 + \sqrt{2} + 1 - \sqrt{2} = 2$, as required.
+        \item[b)] Again, note that $26 + 15\sqrt{3} = (\sqrt{3} + 2)^3$ and $26 - 15\sqrt{3} = (2 - \sqrt{3})^3$. Then $\sqrt[6]{26 + 15\sqrt{3}} + \sqrt[6]{26 - 15\sqrt{3}} = \sqrt[6]{(2 + \sqrt{3})^3} + \sqrt[6]{(2 - \sqrt{3})^3} = \sqrt{2 + \sqrt{3}} + \sqrt{2 - \sqrt{3}} = \sqrt{\frac{4 + 2\sqrt{3}}{2}} + \sqrt{\frac{4 - 2\sqrt{3}}{2}} = \frac{\sqrt{(\sqrt{3} + 1)^2} + \sqrt{(\sqrt{3} - 1)^2}}{\sqrt{2}} = \frac{\sqrt{3} + 1 + \sqrt{3} - 1}{\sqrt{2}} = 2\sqrt{3}/\sqrt{2} = \sqrt{6}$, as required.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}(1963 AMC 12, p.40)
+If $x$ is a number satisfying the equation $\sqrt[3]{x + 9} -
+\sqrt[3]{x - 9} = 3$, then $x^2$ is between:
+
+(A) 55 and 65 \hspace{5mm} (B) 65 and 75 \hspace{5mm} (C) 75 and 85 \hspace{5mm} (D) 85 and 95 \hspace{5mm} (E) 95 and 105
+\end{exercise}
+\begin{solution}
+    Raising both sides to the power 3 yields $27 = 3^3 = (\sqrt[3]{x + 9} - \sqrt[3]{x - 9})^3 = (x + 9) - 3(x + 9)^{2/3}(x - 9)^{1/3} + 3(x + 9)^{1/3}(x - 9)^{2/3} - (x - 9) = 18 - 3(x + 9)^{1/3}(x - 9)^{1/3}(\sqrt[3]{x + 9} - \sqrt[3]{x - 9}) = 18 - 9(x + 9)^{1/3}(x - 9)^{1/3} = 18 - 9\sqrt[3]{x^2 - 81}$. Simplifying the latter leads to $\sqrt[3]{x^2 - 81} = -1$, or $x^2 = 80$. Thus, the correct answer is (C).
+\end{solution}
+
+\begin{exercise}(1997 ARML, Individual Contest, p.8)
+If $\sqrt[3]{\sqrt[3]{2} - 1}$ is written as $\sqrt[3]{a} +
+\sqrt[3]{b} + \sqrt[3]{c}$, where $a, b$, and $c$ are rational
+numbers, compute the sum $a + b + c$.    
+\end{exercise}
+\begin{solution}
+    TODO!!!
+\end{solution}
+
+\begin{exercise}(2004 UK Senior Math Challenge, p.25)
+Positive integers $x$ and $y$ satisfy the equation
+\[\sqrt{x + \frac{1}{2}\sqrt{y}} - \sqrt{x - \frac{1}{2}\sqrt{y}} = 1.\]
+Which of the following is a possible value of y?
+
+(A) 5 \hspace{5mm} (B) 6 \hspace{5mm} (C) 7 \hspace{5mm} (D) 8 \hspace{5mm} (E) 9
+\end{exercise}
+\begin{solution}
+    Taking a square on both sides yields $x + \frac{\sqrt{y}}{2} - 2\sqrt{x^2 - \frac{y}{4}} + x - \frac{\sqrt{y}}{2} = 2x - 2\sqrt{x^2 - \frac{y}{4}} = 1$, or $\sqrt{x^2 - \frac{y}{4}} = x - \frac{1}{2}$. Squaring both sides again produces $x^2 - x + \frac{1}{4} = x^2 - \frac{y}{4}$, which simplifies to $y = 4x - 1$. Since both $x, y$ are integers, this implies that $y \equiv 3 \pmod{4}$, and the only matching answer is 7, that is, (C).
+\end{solution}
+
+\begin{exercise}(2018 Awesome Math Summer Program, Admission Test C, p.3(a))
+Solve in positive real numbers the equation: $x - \sqrt{2018 + \sqrt{x}} = 4$.
+\end{exercise}
+\begin{solution}
+    TODO!!!
+\end{solution}
+
+\begin{exercise}(1983 AIME, p.3) 
+What is the product of the real roots of the equation $x^2 + 18x + 30 = 2\sqrt{x^2 + 18x + 45}$?    
+\end{exercise}
+\begin{solution}
+    Let us make a substitution $t = x^2 + 18x + 30$, then the equation becomes $t = 2\sqrt{t + 15}$. After squaring of both sides and rearranging, we arrive at $t^2 - 4t - 60 = 0$. The roots of the last equation are $t_{1,2} = 10, -6$. Now, reverting to the original form, this means that we have two equations: $x^2 + 18x + 30 = 10$ and $x^2 + 18x + 30 = -6$. This is equivalent to solving two equations $x^2 + 18x + 20 = 0$ and $x^2 + 18x + 36 = 0$. Note that any root of either of these two equations is a root of the original equation. Checking the discriminants of both shows that all their roots are real, and the products of the respective roots of each equation equal the constant terms, 20 and 36. Finally, the product of all four roots is $20 \cdot 36 = 720$.
+\end{solution}
+
+\begin{exercise}(1991 AIME, p.7) 
+Find $A^2$, where $A$ is the sum of the absolute values of all roots of the following equation:
+\[x = \sqrt{19} + \frac{91}{\sqrt{19} + \frac{91}{\sqrt{19} + \frac{91}{\sqrt{19} + \frac{91}{\sqrt{19} + \frac{91}{x}}}}}.\]   
+\end{exercise}
+\begin{solution}
+    TODO!!!
+\end{solution}
+
+\begin{exercise}(1987 British Mathematical Olympiad, p.1) Find all real solutions x of the equation:
+\[\sqrt{x + 1972098 - 1986\sqrt{x + 986049}} + \sqrt{x + 1974085 - 1988\sqrt{x + 986049}} = 1.\]
+\end{exercise}
+\begin{solution}
+We begin by trying to extract complete squares from the expressions under radicals. Note that $1986 = 2\cdot 993$ and $19720098 = 2 \cdot 986049 = 2 \cdot 993^2$. Similarly, $1988 = 2\cdot 994$ and $19740085 = 986049 + 988036 = 993^2 + 994^2$. This yields $\sqrt{x + 1972098 - 1986\sqrt{x + 986049}} + \sqrt{x + 1974085 - 1988\sqrt{x + 986049}} = \sqrt{(\sqrt{x + 993^2} - 993)^2} + \sqrt{(\sqrt{x + 993^2} - 994)^2} = |\sqrt{x + 993^2} - 993| + |\sqrt{x + 993^2} - 994|$. The absolute values assume the following values depending on $x$:
+
+1) $x < 0 \Rightarrow \sqrt{x + 993^2} < 993$: $|\sqrt{x + 993^2} - 993| + |\sqrt{x + 993^2} - 994| = 993 - \sqrt{x + 993^2} + 994 - \sqrt{x + 993^2} = 1987 - 2\sqrt{x + 993^2} = 1$, or $2 \cdot 993 = 2\sqrt{x + 993^2}$. Squaring both sides produces $4 \cdot 993^2 = 4x + 4 \cdot 993^2 \Rightarrow x = 0$, a contradiction, since we assumed $x < 0$.
+
+2) $0 \leq x \leq 2\cdot 993 + 1 = 1987 \Rightarrow 993 \leq \sqrt{x + 993^2} \leq 994$: $|\sqrt{x + 993^2} - 993| + |\sqrt{x + 993^2} - 994| = \sqrt{x + 993^2} - 993 + 994 - \sqrt{x + 993^2} = 1$, which is true for any $x$ in this interval. So $\forall x \in [0,1987]$, $x$ is a root.
+
+3) $x > 2\cdot 993 + 1 = 1987 \Rightarrow \sqrt{x + 993^2} > 994$: $|\sqrt{x + 993^2} - 993| + |\sqrt{x + 993^2} - 994| = \sqrt{x + 993^2} - 993 + \sqrt{x + 993^2} - 994 = 2\sqrt{x + 993^2} - 1987 = 1$, which is equivalent to $\sqrt{x + 993^2} = 994$, or $x = 994^2 - 993^2 = 1987$, again a contradiction due to our assumption that $x > 1987$.
+
+Thus, combining the results of the above three scenarios, we conclude that the roots of the given equation are all real numbers $x$ in the closed interval $[0, 1987]$.
+\end{solution}
+
+\begin{exercise}(\cite{sega2018})
+Solve the equation: $\sqrt[3]{x + 1} + \sqrt[3]{4x + 7} = \sqrt[3]{3x + 5} + \sqrt[3]{2x + 3}$.
+\end{exercise}
+\begin{solution}
+    TODO!!!
+\end{solution}
+
+\begin{exercise}(\cite{sega2018})
+Solve the equation: $\sqrt[5]{x + \sqrt{x^2 + 32}} + \sqrt[5]{x - \sqrt{x^2 + 32}} = 2$.
+\end{exercise}
+\begin{solution}
+    TODO!!!
+\end{solution}

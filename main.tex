@@ -1,0 +1,501 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsthm, amsmath, amssymb, enumitem, fullpage, natbib, tkz-euclide, float}
+\usepackage{subfiles}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{exercise}[theorem]{Exercise}
+\theoremstyle{remark}
+\newenvironment{solution}{\noindent\textbf{Solution:}}
+
+\title{Math Problems with Solutions}
+\author{Georgiy Platonov}
+\date{April 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Radicals}
+
+% \subfile{sections/radicals}
+
+%%====================================================================
+%%====================================================================
+
+\section{Polynomials}
+
+\subfile{sections/polynomials}
+%%====================================================================
+%%====================================================================
+
+\section{Complex Numbers}
+
+\begin{exercise}(\cite{alfutova}, 7.10)
+    \textbf{Circles of Apollonius.} Prove that on the complex plane, the equality $|z - a| = k|z - b|$, where $a, b$ are real numbers and $k \not = 1$, defines a circle.
+\end{exercise}
+\begin{solution}
+    Let $z = x + iy$ denote an arbitrary such point. Then $|z - a|^2 = k^2|z - b|^2$ or, alternatively, $(x - a)^2 + y^2 = k^2(x - b)^2 + k^2y^2$. Rearranging gives $(k^2 - 1)x^2 + 2(a - k^2b)x + k^2b^2 - a^2 + (k^2 - 1)y^2 = 0$. After dividing by $k^2 - 1$ we get $x^2 + 2\frac{a - k^2b}{k^2 - 1}x + \frac{k^2b^2 - a^2}{k^2 - 1} + y^2 = 0$. Finally, completing the square yields 
+    \begin{align*}
+        x^2 + 2\frac{a - k^2b}{k^2 - 1}x + \frac{k^2b^2 - a^2}{k^2 - 1} + y^2
+        &= \Big(x^2 + 2\frac{a - k^2b}{k^2 - 1}x + \frac{(a - k^2b)^2}{(k^2 - 1)^2}\Big) + \frac{k^2b^2 - a^2}{k^2 - 1} - \frac{(a - k^2b)^2}{(k^2 - 1)^2} + y^2 \\
+        &= \Big(x + \frac{a - k^2b}{k^2 - 1}\Big)^2 + \frac{(k^2b^2 - a^2)(k^2 - 1) - (a - k^2b)^2}{(k^2 - 1)^2} + y^2 \\
+        &= \Big(x + \frac{a - k^2b}{k^2 - 1}\Big)^2 + \frac{k^4b^2 - k^2b^2 - a^2k^2 + a^2 - a^2 + 2abk^2 - k^4b^2}{(k^2 - 1)^2} + y^2 \\
+        &= \Big(x + \frac{a - k^2b}{k^2 - 1}\Big)^2 + \frac{k^2(2ab - b^2 - a^2)}{(k^2 - 1)^2} + y^2\\
+        &= \Big(x + \frac{a - k^2b}{k^2 - 1}\Big)^2 - \frac{k^2(a - b)^2}{(k^2 - 1)^2} + y^2 = 0.
+    \end{align*}
+    
+    Rearranging again gives $(x + \frac{a - k^2b}{k^2 - 1})^2 + y^2 = \frac{k^2(a - b)^2}{(k^2 - 1)^2}$, which is an equation of a circle with radius $\frac{k|a - b|}{|k^2 - 1|}$ centered at $(-\frac{a - k^2b}{k^2 - 1}, 0)$. This completes the proof.
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 7.32)
+Solve the equation $x^4 + x^3 + x^2 + x + 1 = 0$.    
+\end{exercise}
+\begin{solution}
+    Note that every root of $x^4 + ... + 1$ is also a root of $(x - 1)(x^4 + ... + 1) = x^5 - 1$. The latter equation can be re-written as $x^5 = 1$, and its complex roots are precisely the 5th complex roots of unity: $\cos \frac{2k\pi}{5} + i\sin \frac{2k\pi}{5}, k \in [0..4]$. Clearly, $x^5 - 1$ can have only one root, namely, $x = 1$, which might not be a root of $x^4 + ... + 1$, which is actually the case as can be quickly checked. All the other roots of $x^5 - 1$ must be roots of $x^4 + ... + 1$. Thus, the latter has the following roots: $\cos 2k\pi /5 + i\sin 2k\pi/5, k \in [1..4]$.
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 7.33)
+Prove that the polynomial $x^{44} + x^{33} + x^{22} + x^{11} + 1$ is divisible by $x^4 + x^3 + x^2 + x + 1$.    
+\end{exercise}
+\begin{solution}
+    First, following the previous problem (\cite{alfutova} 7.32), the roots of $x^4 + ... + 1$ are $\cos 2\pi n / 5 + i\sin 2\pi n / 5, n \in [1..4]$. Let's denote them $x_1, x_2, x_3, x_4$. Applying the same reasoning to the polynomial $x^{44} + ... + 1$, we find that its roots are precisely $\cos 2\pi n / 55 + i \sin 2\pi n / 55, n \in [1..54]$. Again, based on the value of $n$, let's denote these roots $y_1, ..., y_{54}$. But then note that for $n = 11k, k \in [1..4]$, $y_{n} = y_{11k} = \cos 2\pi 11k / 55 + i \sin 2\pi 11k / 55 = \cos 2\pi k / 5 + i \sin 2 \pi k / 5 = x_k$, where $k \in [1..4]$. That is, $y_{11} = x_1, y_{22} = x_2, y_{33} = x_3, y_{44} = x_4$. Hence, all roots of $x^4 + ... + 1$ are also roots of $x^{44} + ... + 1$ of the same multiplicity. That is, $x^{44} + x^{33} + ... + 1$ is divisible by $x^4 + x^3 + ... + 1$, as required.
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 7.34)
+Compute:
+\begin{enumerate}
+    \item $\cos \frac{2\pi}{7} + \cos \frac{4\pi}{7} + \cos \frac{6\pi}{7}$;
+    \item $\cos \frac{2\pi}{7}\cos \frac{4\pi}{7}\cos \frac{6\pi}{7}$.
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+    \begin{enumerate}
+        \item 
+        \item Note that $\cos \frac{6\pi}{7} = -\cos \frac{\pi}{7}$. Hence,
+        $\cos \frac{2\pi}{7}\cos \frac{4\pi}{7}\cos \frac{6\pi}{7} = -\cos\frac{\pi}{7}\cos\frac{2\pi}{7}\cos\frac{4\pi}{7} = -\frac{8\sin\frac{\pi}{7} \cos\frac{\pi}{7}\cos\frac{2\pi}{7}\cos\frac{4\pi}{7}}{8\sin \frac{\pi}{7}} = - \frac{\sin \frac{8\pi}{7}}{8\sin \frac{\pi}{7}} = - \frac{-\sin\frac{\pi}{7}}{8\sin \frac{\pi}{7}} = 1/8$.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 7.35)
+\begin{enumerate}
+    \item Prove that the polynomial $P(x) = (\cos \phi + x \sin \phi)^n - \cos n\phi - x \sin n\phi$ is divisible by $x^2 + 1$;
+    \item Prove that the polynomial $Q(x) = x^n \sin \phi - \rho^{n-1}x \sin n\phi + \rho^n \sin (n-1)\phi$ is divisible by $x^2 - 2x\rho \cos \phi + \rho^2$.
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+    \begin{enumerate}
+        \item By the Bezout Theorem, $P(x)$ is divisible by $x - a$ iff $P(a) = 0$. Note that $x^2 + 1 = (x - i)(x + i)$. Substituting both $i$ and $-i$ for $x$ in $P(x)$, we see that $P(i) = P(-i) = 0$. Thus, $P(x)$ is divisible by both $(x + i)$ and $(x - i)$. Hence, $P(x)$ is also divisible by $x^2 + 1$, as required.
+        \item This is proved similarly to above. Solving $x^2 - 2\rho x \cos \phi + \rho^2$ for $x$, we find $x_{1,2} = \rho(\cos \phi \pm i \sin \phi)$. Now, 
+        \begin{align*}
+            Q(x_1) &= \rho^n(\cos \phi + i\sin \phi)^n\sin \phi - \rho^{n-1}\rho(\cos \phi + i\sin \phi) \sin n\phi + \rho^n \sin (n-1)\phi \\
+            &= \rho^n (\cos n\phi \sin \phi + i\sin n\phi \sin \phi - \cos \phi \sin n\phi - i\sin \phi \sin n\phi + \sin(n-1)\phi) \\
+            &= \rho^n (\cos n\phi \sin \phi - \cos \phi \sin n\phi + \sin(n-1)\phi) \\
+            &= \rho^n (-\sin(n-1)\phi + \sin(n-1)\phi) = 0.
+        \end{align*}
+        In a completely analogous way we can show that $Q(x_2) = 0$ as well. Hence, $Q(x)$ is divisible by $x - \rho(\cos \phi + i\sin \phi)$ and by $x - \rho(\cos \phi - i\sin \phi)$, and therefore divisible by $x^2 - 2\rho x \cos \phi + \rho^2$, as required.
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 7.36a)
+Prove the following identity:
+$x^{2n} - 1 = (x^2 - 1)\prod_{k=1}^{n-1}(x^2 - 2x\cos \frac{k\pi}{n} + 1)$.
+\end{exercise}
+\begin{solution}
+    TODO!!
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 7.37-7.38)
+    Using the De Moivre's formula, prove that
+
+    \[\cos(nx) = T_n(\cos x), \hspace{10mm} \sin(nx) = \sin x U_{n-1}(\cos x),\]
+    where $T_n(x), U_n(x)$ are polynomials of degree $n$. These polynomials are known as Chebyshev's Polynomials of the First and Second Kind, respectively. Compute $T_n(x), U_n(x)$ for $n \in [0..5]$ explicitly.
+
+    Prove that they satisfy recurrent relations
+    \[T_0(x) = 1, T_1(x) = x, T_{n+1}(x) = 2xT_n(x) - T_{n-1}(x),\]
+
+    and 
+
+    \[U_0(x) = 1, U_1(x) = 2x, U_{n+1}(x) = 2xU_n(x) - U_{n-1}(x).\]
+\end{exercise}
+\begin{solution}
+    Let $T_0(x) = 1, T_1(x) = x, U_0(x) = 1, U_1(x) = 2x$ as defined above. We can see directly that $\cos (0x) = \cos 0 = 1 = T_0(\cos x), \cos(1x) = \cos x = T_1(\cos x)$ and $\sin (1x) = \sin x = \sin x U_0(\cos x), \sin(2x) = 2\sin x\cos x = \sin x U_1(\cos x)$.
+
+    Now, assuming that, for some $n > 0$, $T_n(x), U_{n-1}(x)$ are polynomials of degree $n$ and $n-1$, such that $T_n(\cos x) = \cos(nx), U_{n-1}(\cos x)\sin x = \sin(nx)$ we get
+    \begin{align*}
+        \cos (n+1)x + i\sin(n+1)x &= (\cos x + i \sin x)^{n+1} = (\cos x + i\sin x)^n(\cos x + i\sin x) \\
+        &= (\cos nx + i \sin nx)(\cos x + i \sin x) \\
+        &= (T_n(\cos x) + i\sin x U_{n-1}(\cos x))(\cos x + i \sin x) \\
+        &= \cos x T_n(\cos x) - \sin^2 x U_{n-1}(\cos x) + i(\sin x T_n(\cos x) + \sin x\cos x U_{n-1}(\cos x)) \\
+        &= \cos x T_n(\cos x) + (\cos^2 x - 1)U_{n-1}(\cos x) + i \sin x(T_n(\cos x) + \cos x U_{n-1}(\cos x)).
+    \end{align*}
+    Now, if we define 
+    \[T_{n+1}(x) = xT_n(x) + (x^2 - 1)U_{n-1}(x),\] 
+    
+    and 
+    \[U_n(x) = T_n(x) + xU_{n-1}(x),\]
+    
+    it is clear that $\cos(n+1)x = T_{n+1}(\cos x)$ and $\sin(n+1)x = \sin x U_n(\cos x)$, and that $T_{n+1}(x)$ and $U_n(x)$ are polynomials of degrees $n+1$ and $n$, respectively. Thus, by induction, it follows that $\cos nx = T_n(\cos x), \sin nx = \sin x U_{n-1}(\cos x), \forall n > 0$, where $T_n(x), U_n(x)$ are both polynomials of degree $n$.
+
+    Explicitly, for $n \in [0..5]$, the polynomials are
+    
+    $\begin{array}{cc}
+        T_0(x) = 1 & U_0(x) = 1, \\
+        T_1(x) = x & U_1(x) = 2x, \\
+        T_2(x) = xT_1(x) + (x^2 - 1)U_0(x) = 2x^2 - 1 & U_2(x) = T_2(x) + xU_1(x) = 4x^2 - 1, \\
+        T_3(x) = xT_2(x) + (x^2 - 1)U_1(x) = 4x^3 - 3x & U_3(x) = T_3(x) + xU_2(x) = 8x^3 - 4x, \\
+        T_4(x) = xT_3(x) + (x^2 - 1)U_2(x) = 8x^4 - 8x^2 + 1 & U_4(x) = T_4(x) + xU_3(x) = 16x^4 - 12x^2 + 1, \\
+        T_5(x) = xT_4(x) + (x^2 - 1)U_3(x) = 16x^5 - 16x^3 + 5x & U_5(x) = T_5(x) + xU_4(x) = 32x^5 - 28x^3 + 6x. \\
+    \end{array}$
+
+    Now, to prove the recurrences, consider the recurrent formulas for $T_n(x), U_n(x)$ derived above and subtract from the first formula the second, multiplied by $x$:
+
+    \[T_{n+1}(x) - xU_n(x) = xT_n(x) + (x^2-1)U_{n-1}(x) - xT_n(x) - x^2U_{n-1}(x) = -U_{n-1}(x),\]
+
+    or $T_{n+1}(x) = xU_n(x) - U_{n-1}(x)$, $\forall n \geq 1$.    
+
+    Then $T_{n+1}(x) - xT_n(x) = (x^2 - 1)U_{n-1}(x) = x^2U_{n-1}(x) - U_{n-1}(x) + xU_{n-2}(x) - xU_{n-2}(x) = x(xU_{n-1}(x) - U_{n-2}(x)) - (U_{n-1}(x) - xU_{n-2}(x)) = xT_n(x) - T_{n-1}(x)$. Rearranging gives $T_{n+1}(x) = 2xT_n(x) - T_{n-1}(x)$, as required.
+
+    On the other hand, $U_{n+1}(x) = T_{n+1}(x) + xU_n(x) = xT_n(x) + (x^2 - 1)U_{n-1}(x) + xU_n(x) = x(T_n(x) + xU_{n-1}(x)) - U_{n-1}(x) + xU_n(x) = xU_n(x) - U_{n-1}(x) + xU_n(x) = 2xU_n(x) - U_{n-1}(x)$.
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 7.40)
+It is known that $\cos \alpha^\circ = 1/3$. Can $\alpha$ be rational?
+\end{exercise}
+
+\begin{exercise}(\cite{alfutova}, 7.41)
+Using the rational root theorem prove that if $p/q \in \mathbb{Q}$ and $\cos (p/q)^\circ \not= 0, \pm 1/2, \pm 1$, then $\cos (p/q)^\circ$ must be an irrational number.   
+\end{exercise}
+\begin{solution}
+    We first prove a small 
+    First, note that $\cos (360qp/q)^\circ = \cos 360p^\circ = 1$. On the other hand, $\cos (360qp/q)^\circ = T_{360q}(\cos p/q^\circ)$, where $T_{360q}(x)$ is a Chebyshev's polynomial. Thus we get that $T_{360q}(\cos p/q^\circ) - 1 = 0$, i.e., $\cos p/q^\circ$ is a root of $P(x) = T_{360q}(x) - 1$.
+    % Let $\cos p/q^\circ = m/n$ be a rational number in lowest terms. 
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 7.46)
+    Prove that if $z + z^{-1} = 2\cos x$, then $z^n + z^{-n} = 2\cos nx$. Express $z^n + z^{-n}$ through $y = z + z^{-1}$.
+\end{exercise}
+\begin{solution}
+    We prove the result by induction. For $n = 1$ it is given, for $n = 2$ we have $z^2 + z^{-2} = (z + z^{-1})^2 - 2 = 4\cos^2 x - 2 = 2 \cos 2x$, as required. Now, assuming the result holds for all natural numbers up to and including $n$, we have, for $n+1$:
+    \begin{align*}
+        z^{n+1} + z^{-(n+1)} &= (z + z^{-1})(z^n + z^{-n}) - (z^{n-1} + z^{-(n-1)}) \\
+        &= 2\cos x 2\cos nx - 2\cos (n-1)x \\
+        &= 2(\cos (n+1)x + \cos(n-1)x) - 2 \cos (n-1)x \\
+        &= 2\cos (n+1)x,
+    \end{align*}
+    as required. By induction, the result must hold for all $n \in \mathbb{N}$.
+    
+    Finally, $z^n + z^{-n} = 2\cos nx = 2T_n(\cos x) = 2T_n((2\cos x)/2) = 2T_n(y/2)$.
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 7.49)
+Let polynomial $f(x)$ with real coefficients have a root $a + ib$. Prove that $a - ib$ will also be the root of $f(x)$.    
+\end{exercise}
+\begin{solution}
+    For any two complex numbers a, b, we have $\overline{ab} = \overline{a}\overline{b}$. By induction, $\overline{z^n} = \overline{z}^n$, for any complex $z$ and $n \in \mathbb{N}$. Now, let $z = a + ib$ and $f(x) = a_nx^n + ... + a_0$. $f(z) = 0$ implies that $0 = \overline{f(z)} = \overline{a_nz^n + ... + a_0} = \overline{a_nz^n} + ... + \overline{a_0} = a_n\overline{z}^n + ... + a_0 = f(\overline{z})$. Hence, $\overline{z} = a - ib$ is also the root of $f(x)$.
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 7.51)
+    Let $a, b \in \mathbb{R}$. Let us define the exponential function $e^x$ on the set of complex numbers using the equality
+    \[e^{a+ib} = \lim_{n\to \infty} \Big(1 + \frac{a+ib}{n}\Big)^n.\]
+
+    Prove the Euler's formula: $e^{a+ib} = e^a(\cos b + i\sin b)$. Also, prove that the trigonometric functions $\sin x$ and $\cos x$ can be represented using the complex exponent:
+    \[\cos x = \frac{e^{ix} + e^{-ix}}{2},\hspace{10mm} \sin x = \frac{e^{ix} - e^{-ix}}{2i}.\]
+\end{exercise}
+\begin{solution}
+    
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 7.58)
+Prove that $\cos \phi + ... + \cos n\phi = \frac{\sin n\phi /2 \cos (n+1)\phi /2}{\sin \phi/2}$ and derive a similar formula for $\sin \phi + ... + \sin n\phi$.
+\end{exercise}
+\begin{solution}
+    TODO!!!
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 7.71, \textbf{Gauss-Lucas Theorem})
+Let $f(z)$ be an $n$th-degree complex polynomial with roots $z_1, ..., z_n$. Define a polygon $M$ as the convex hull of $z_1, ..., z_n$. Prove that the roots of $f'(z)$ lie within $M$.
+\end{exercise}
+\begin{solution}
+    The solution of this problem is built step by step using several previous problems as lemmas. We will prove all these intermediate results here.
+    TODO!!!
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 7.77)
+    Find the remainder of dividing 
+    \[P(x) = x^{6n} + x^{5n} + x^{4n} + x^{3n} + x^{2n} + x^n + 1\] by 
+    \[Q(x) = x^6 + x^5 + x^4 + x^3 + x^2 + x + 1,\]
+    if $n$ is a multiple of 7.
+\end{exercise}
+\begin{solution}
+    Let $P(x) = Q(x)T(x) + R(x)$, where $R(x)$ is the remainder of the division of $P(x)$ by $Q(x)$. Note that the degree of $R(x) \leq 5$. Now, since $(x - 1)Q(x) = x^7 - 1$, it is clear that the roots of $Q(x)$ are exactly the 7th roots of unity $w_1, ..., w_6$, where $w_k = \cos(2\pi k / 7) + i \sin(2\pi k/ 7)$. Because $n = 7m$, $w_i^n = 1, \forall i \in [1..6]$. Hence, for all $w_i$, $P(w_i) = 1 + 1 + ... + 1 = 7$. 
+    
+    Now consider the polynomial $R(x) - 7$. Note that for $i \in [1..6], R(w_i) - 7 = P(w_i) - Q(w_i)T(w_i) - 7 = 7 - 0 \cdot T(w_i) - 7 = 0$. That is, the polynomial $R(x) - 7$ assumes zero value in at least six distinct points $w_1, ..., w_6$. Since $R(x) - 7$ has degree at most 5, it is only possible when $R(x) - 7 = 0$, i.e., $R(x) = 7$.
+\end{solution}
+
+\section{Algebra + Geometry}
+
+\begin{exercise}(\cite{alfutova}, 8.2)
+Prove the equalities:
+\begin{enumerate}
+    \item[a)] $\cos \frac{\pi}{5} - \cos \frac{2\pi}{5} = \frac{1}{2}$;
+    \item[b)] $\frac{1}{\sin \frac{\pi}{7}} = \frac{1}{\sin \frac{2\pi}{7}} + \frac{1}{\sin \frac{3\pi}{7}}$;
+    \item[c)] $\sin 9^\circ + \sin 49^\circ + \sin 89^\circ + ... + \sin 329^\circ = 0$.
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+    \begin{enumerate}
+        \item[a)] $\cos \pi/5 - \cos 2\pi/5 = \cos \pi/5 + \cos 3\pi/5 = \frac{1}{2}(\cos \pi/5 + \cos 3\pi/5 + \cos 7\pi/5 + \cos 9\pi/5) = \frac{1}{2}(\cos \pi/5 + \cos 3\pi/5 + \cos 5\pi/5 + \cos 7\pi/5 + \cos 9\pi/5) + \frac{1}{2} = \frac{1}{2} \cdot 0 + \frac{1}{2} = \frac{1}{2}$. The second to last equality follows, since $\cos \pi/5, ..., \cos 9\pi/5$ are the x coordinates of the vertices of a regular pentagon inscribed in the unit circle centered at the origin. That is, this follows from the fact that if $\Vec{A_1} = (\cos \pi/5, \sin \pi/5), ..., \Vec{A_5} = (\cos 9\pi/5, \sin 9\pi/5)$ are vectors from the origin to the vertices of this pentagon, then $\sum_i \Vec{A_i} = 0$.
+        \item[b)] Let $A_1...A_7$ be a regular heptagon and let $M$ be the point of intersection of the diagonals $A_1A_4$ and $A_2A_5$. Then the conclusion follows from the congruence of the triangles $A_1MA_5$ and $A_2A_3A_4$.
+        \item[c)] Note that if $\Vec{A_1}, ..., \Vec{A_n}$ are vectors directed from the origin to the vertices of a regular $n$-gon centered at the origin, then $\sum_i \Vec{A_i} = 0$. Now, let $A_1, ..., A_9$ be the vertices of a regular nonagon (9-gon) inscribed in a unit circle such that $\Vec{A_1}, \Vec{A_2}, ..., \Vec{A_9}$ form angles of $9^\circ, 49^\circ, ..., 329^\circ$ degrees with the positive direction of the x axis. Then $\Vec{A_i} = (\cos ((i-1)40^\circ + 9^\circ), \sin ((i-1)40^\circ + 9^\circ)), \forall i \in [1..9]$. Hence, $\Vec{0} = (0, 0) = \sum_i \Vec{A_i} = \sum_i (\cos ((i-1)40^\circ + 9^\circ), \sin ((i-1)40^\circ + 9^\circ)) = (\sum_i \cos (((i-1)40^\circ + 9^\circ), \sum_i \sin (((i-1)40^\circ + 9^\circ))$. That is, $\sin 9^\circ + \sin 49^\circ + ... + \sin 329^\circ = 0$, as required.
+    \end{enumerate}
+\end{solution}
+
+
+\begin{exercise}(\cite{alfutova}, 8.4)
+Find $\cos 36^\circ$ and $\cos 72^\circ$.
+\end{exercise}
+\begin{solution} Let us construct an isosceles triangle with angles $\alpha = 36^\circ, 2\alpha, 2\alpha$ and sides of length 1, as depicted in the figure \ref{fig:8_4}. Construct a bisector $CD$ of the angle at the vertex $C$, and note that the segments $AD, CD$ and $BC$ are equal. Now, from the cosine law, $BC = \sqrt{2(1 - \cos \alpha)}$. Applying the cosine law again, to the triangle $DCB$, we find $BD = \sqrt{4(1 - \cos \alpha)^2} = 2(1 - \cos\alpha)$. Now, since $AD + BD = AB = 1$, we have $\sqrt{2(1 - \cos\alpha)} + 2(1 - \cos\alpha) = 1$. Let us substitute $t$ for $\sqrt{2(1 - \cos\alpha)}$, then we can rewrite the equation as $t + t^2 = 1$. Solving it yields $t = \frac{-1 \pm \sqrt{5}}{2}$, and since $t \geq 0$, we are left with only one option: $\sqrt{2(1 - \cos\alpha)} = t = \frac{-1 + \sqrt{5}}{2}$. Solving the last equation yields $\cos 36^\circ = \cos \alpha = \frac{1 + \sqrt{5}}{4} = \frac{\phi}{2}$, where $\phi$ is the golden ratio constant. Finally, $\cos 72^\circ = 2\cos^2 36^\circ - 1 = -\frac{1 - \sqrt{5}}{4} = -\frac{\hat{\phi}}{2}$.
+    \begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}
+        \tkzDefPoint(0, 0){A};
+        \tkzDefPoint(10, 0){B};
+        \tkzDefPointBy[rotation= center A angle 36](B) \tkzGetPoint{C};
+        \tkzDefPointBy[rotation= center C angle -36](B) \tkzGetPoint{D};
+        \tkzDrawPolygon(A, B, C);
+        \tkzLabelSegment[above left=4pt and 4pt](A,C){$1$};
+        \tkzLabelSegment[below=4pt](A,B){$1$};
+        
+        \tkzDrawSegment(C, D);
+        \tkzDrawPoints(A, B, C, D);
+        \tkzLabelPoints[below left](A);
+        \tkzLabelPoints[below right](B);
+        \tkzLabelPoints[above](C);
+        \tkzLabelPoints[below](D);
+        \tkzMarkSegments[pos=0.5,mark=|](A,D C,D B,C);
+
+        \tkzMarkAngles(D,A,C A,C,D D,C,B)[arc=l];
+        \tkzMarkAngles[arc=ll, mksize=2cm](C,B,D B,D,C);
+        \tkzLabelAngles[pos=1.5](D,A,C A,C,D D,C,B){$\alpha$};
+        \tkzLabelAngles[pos=1.5](B,D,C C,B,D){$2\alpha$};
+    \end{tikzpicture}
+    \caption{Figure for the problem \cite{alfutova}, 8.4.}
+    \label{fig:8_4}
+    \end{figure}
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 8.6)
+Solve the equations for $0^\circ < x < 90^\circ$: 
+\begin{enumerate}
+    \item[a)] $\sqrt{13 - 12\cos x} + \sqrt{7 - 4\sqrt{3}\sin x} = 2\sqrt{3}$;
+    \item[b)] $\sqrt{2 - 2\cos x} + \sqrt{10 - 6\cos x} = \sqrt{10 - 6\cos 2x}$;
+    \item[c)] $\sqrt{5 - 4\cos x} + \sqrt{13 - 12\sin x} = \sqrt{10}$.
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+\begin{enumerate}
+    \item[a)]
+    Notice that $\sin x = \cos (90^\circ - x)$. With this, one can rewrite the expressions under radicals as applications of the cosine law: $13 - 12\cos x = 2^2 + 3^2 - 2\cdot 2\cdot3 \cdot \cos x$ and $7 - 4\sqrt{3}\sin x = 2^2 + (\sqrt{3})^2 - 2\cdot 2\cdot \sqrt{3} \cos(90^\circ - x)$.
+
+    Now, draw a quadrilateral $ADBC$ like shown in the figure \ref{fig:8_6} with angles $x$ and $90^\circ - x$ adjacent. Then, by the law of cosines, $AD = \sqrt{13 - 12\cos x}$ and $BD = \sqrt{7 - 2\sqrt{3}\sin x}$. Note that the angle at the vertex $C$ is right, and so $ABC$ is a right triangle. Its hypotenuse, $AB$ is equal $\sqrt{3^2 + (\sqrt{3})^2} = \sqrt{12} = 2\sqrt{3} = AD + BD$. This is only possible if $D$ lies on $AB$. Note that the area of $ABC$ can be computed in two different ways: $S(ABC) = \frac{1}{2}\cdot AC \cdot BC = \frac{1}{2}\cdot AC \cdot AB \cdot \sin y$, which yields $\sin y = \frac{BC}{AB} = 1/2$, or $y = 30^\circ$.   
+    
+    \begin{figure}[!ht]
+        \centering
+        \begin{tikzpicture}
+            \tkzDefPoint(0, 0){A}
+            \tkzDefPoint(10, 0){B}
+            \tkzDefPointBy[rotation=center A angle pi/3](B) \tkzGetPoint(C)
+            \tkzDrawPolygon(A, B, C)
+            \tkzDefPointBy[homothety=center C ratio 0.7](A) \tkzGetPoint{C'}
+            \tkzDefPointBy[rotation=center C angle 30](C') \tkzGetPoint{D};
+            \tkzDrawSegment(A, D)
+            \tkzDrawSegment(B, D)
+            \tkzDrawSegment(C, D)
+            \tkzDrawPoints(A, B, C, D)
+            \tkzLabelPoints[below left](A)
+            \tkzLabelPoints[below right](B)
+            \tkzLabelPoints[above](C)
+            \tkzLabelPoints[below](D)
+            \tkzLabelSegment[above left=4pt and 4pt](A,C){$3$};   \tkzLabelSegment[above right=4pt](B,C){$\sqrt{3}$};
+            \tkzLabelSegment[left=4pt](C,D){$2$};
+
+            \tkzMarkAngle[arc=l, mksize=2cm](A,C,D);
+            \tkzLabelAngle[pos=1.5](A,C,D){$x$};
+            \tkzMarkAngle[arc=ll, mksize=2cm](D,C,B);
+            \tkzLabelAngle[pos=1.5](D,C,B){$90^\circ - x$};            
+            \tkzMarkAngle[arc=lll, mksize=2cm](B,A,C);
+            \tkzLabelAngle[pos=2](B,A,C){$y$};
+        \end{tikzpicture}        
+        \caption{Solution for the problem \cite{alfutova}, 8.6a.}
+        \label{fig:8_6}
+    \end{figure}
+
+    Again, by the law of cosines, $AC^2 + AD^2 - 2\cdot AC \cdot AD \cos y = CD^2$, or $9 + 13 - 12\cos x  - 2\cdot 3 \sqrt{13 - 12\cos x} \frac{\sqrt{3}}{2} = 4$. Simplifying and rearranging yields $6 - 4\cos x = \sqrt{3}\sqrt{13 - 12\cos x}$. Next, we square both sides to produce $36 - 48\cos x + 16\cos^2 x = 39 - 36\cos x$, which further simplifies to $16\cos^2 x - 12\cos x - 3 = 0$. The last equation has roots $r_{1,2} = \frac{12 \pm \sqrt{12^2 + 16\cdot 4 \cdot 3}}{32} = \frac{3 \pm \sqrt{21}}{8}$. Note that the condition $x \in (0^\circ, 90^\circ)$ implies that $\cos x > 0$ and so only one root is admissible, namely $\cos x = \frac{3 + \sqrt{21}}{8}$. This gives us the only root of the original equation: $x = \arccos(\frac{3 + \sqrt{21}}{8})$.
+
+    \item[b)] This is solved similarly to a). Draw two angles $ABC = CBD = x$ as adjacent, sharing the side $BC$. Again, $AD = \sqrt{AB^2 + BD^2 - 2\cdot AB \cdot BD \cdot \cos 2x} = \sqrt{10 - 6\cos 2x} = AC + CD$, which implies that $C$ lies on the segment $AD$. Now, $S(ABD) = \frac{1}{2}\cdot 1 \cdot 3 \cdot \sin 2x = S(ABC) + S(BCD) = \frac{1}{2}\cdot 1 \cdot 1 \cdot \sin x + \frac{1}{2} \cdot 1 \cdot 3 \cdot \sin x = 2 \sin x$. Thus, we have $2\sin x = \frac{3}{2} \sin 2x = \frac{3}{2}2 \sin x \cos x = 3\sin x \cos x$. Rearranging gives $\sin x(2 - 3 \cos x) = 0$, and since $x \in (0^\circ, 90^\circ), \sin x \not= 0$. Thus, we must have $\cos x = \frac{2}{3}$. Since $x = \arccos{\frac{2}{3}} \in (0^\circ, 90^\circ)$, this gives us the required root.
+
+    \item[c)] Also solved similarly. Draw two angles $ABC = x$ and $CBD = 90^\circ - x$ as adjacent sharing the side $BC$, where $AB = 1, BC = 2, BD = 3$. Again, point $C$ must lie on $AD$. Then $S(ABD) = \frac{1}{2} AB\cdot AD \cdot \sin DAB = \frac{1}{2} \cdot AB \cdot BD$, which implies $\sin DAB = \frac{AB\cdot BD}{AB \cdot AD} = \frac{3}{\sqrt{10}}$, or $\cos DAB = \frac{1}{\sqrt{10}}$.
+    
+    By the cosine law, $AB^2 + AC^2 - 2\cdot AB \cdot AC \cos DAB = BC^2$, or in numerical terms, $1 + (5 - 4\cos x) - 2 \cdot 1 \cdot \sqrt{5 - 4 \cos x} \frac{1}{\sqrt{10}} = 4$, which simplifies to $\sqrt{10}(1 - 2\cos x) = \sqrt{5 - 4 \cos x}$. Taking a square of both sides produces $10 - 40\cos x + 40 \cos^2 x = 5 - 4\cos x$, or $40 \cos^2 x - 36\cos x + 5 = 0$. Solving this quadratic equation produces roots $r_{1,2} = \frac{9 \pm \sqrt{31}}{20}$. Since $0 < r_{1,2} < 1$, both of these roots are valid values for the cosine, and thus $x_{1,2} = \arccos(\frac{9 \pm \sqrt{31}}{20})$ both are solutions for the initial equation.
+\end{enumerate}
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, p8.7)
+Prove that $\arctan 1 + \arctan \frac{1}{2} + \arctan \frac{1}{3} = \frac{\pi}{2}$.
+\end{exercise}
+\begin{solution}
+Let $\alpha = \arctan 1, \beta = \arctan \frac{1}{2}, \gamma = \arctan \frac{1}{3}$. Construct a right triangle $ABC$ as shown in Figure \ref{fig:8_7}, with $AB = 2, BC = 1$. Since $\gamma < \beta < \alpha = \frac{\pi}{4}$, it is possible. Then $AC = \sqrt{AB^2 + BC^2} = \sqrt{5}$. $1/3 = \tan \gamma = BD/BC = BD$. Note that $CD = \sqrt{BD^2 + BC^2} = \sqrt{10}/3$ and that $AD = AB - BD = 2 - 1/3 = 5/3$. 
+
+Now, $AD^2 = AC^2 + CD^2 - 2\cdot AC \cdot CD \cdot \cos \delta$, which means that $\cos \delta = \frac{AC^2 + CD^2 - AD^2}{2 \cdot AC \cdot CD} = \frac{5 + 10/9 - 25/9}{2 \cdot \sqrt{5} \cdot \sqrt{10} / 3} = 1 / \sqrt{2}$, that is, $\delta = \pi/4 = \alpha$. But then $\alpha + \beta + \gamma = \delta + \beta + \gamma = \pi / 2$, as required.
+
+    \begin{figure}[!ht]
+        \centering
+        \begin{tikzpicture}
+            \tkzDefPoint(0, 0){A}
+            \tkzDefPoint(8, 0){B}
+            \tkzDefPointBy[rotation=center B angle -90](A) \tkzGetPoint(C)
+            \tkzDrawPolygon(A, B, C)
+            \tkzDefPointBy[homothety=center A ratio 0.7](B) \tkzGetPoint{D}
+            % \tkzDefPointBy[rotation=center C angle -30](B) \tkzGetPoint{D};
+            % \tkzDrawSegment(A, D)
+            % \tkzDrawSegment(B, D)
+            \tkzDrawSegment(C, D)
+            \tkzDrawPoints(A, B, C, D)
+            \tkzLabelPoints[below left](A)
+            \tkzLabelPoints[below right](B)
+            \tkzLabelPoints[above](C)
+            \tkzLabelPoints[below](D)
+            \tkzLabelSegment[right=4pt](B, C){$1$};
+            \tkzLabelSegment[below=4pt](A, B){$2$};
+            % \tkzLabelSegment[left=4pt](C,D){$2$};
+
+            \tkzMarkAngle[arc=l, mksize=2cm](B,A,C);
+            \tkzLabelAngle[pos=1.5](B,A,C){$\beta$};
+            \tkzMarkAngle[arc=ll, mksize=2cm](D,C,B);
+            \tkzLabelAngle[pos=1.5](D,C,B){$\gamma$};
+            \tkzMarkAngle[arc=lll, mksize=2cm](A,C,D);
+            \tkzLabelAngle[pos=1.5](A,C,D){$\delta$};
+            \tkzMarkRightAngle(C,B,D);
+        \end{tikzpicture}        
+        \caption{Solution for the problem \cite{alfutova}, 8.7.}
+        \label{fig:8_7}
+    \end{figure}
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, p8.14)
+Let $z_1, z_2$ be two given points in the complex plane. Give a geometric interpretation of the sets of points $z$ satisfying the relations:
+\begin{enumerate}
+    \item[a)] $\arg \frac{z - z_1}{z - z_2} = 0$;
+    \item[b)] $\arg \frac{z_1 - z}{z - z_2} = 0$.
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+    Note that if $u = r_u(\cos \theta_u + i \sin \theta_u), v = r_v(\cos \theta_v + i \sin \theta_v)$ are two complex numbers, then their product is a number $r_ur_v(\cos(\theta_u + \theta_v) + i \sin(\theta_u + \theta_v)$, that is, it is a number with modulus equal to the product of operand moduli and the argument equal to the sum of arguments of the operands. Note also that $\arg(1/z) = -\arg(z)$, for any non-zero complex $z$, and so $\arg(\frac{z - z_1}{z - z_2}) = \arg(z - z_1) + \arg(\frac{1}{z - z_2}) = \arg(z - z_1) - \arg(z - z_2) = 0$. The latter implies that $z - z_1$ and $z - z_2$ are parallel vectors, that is, they are collinear and point in the same direction. This is satisfied if $z$ lies on the line defined by the points $z_1$ and $z_2$, and outside the segment $z_1z_2$.
+
+    Applying the same argument to $\arg(\frac{z_1 - z}{z - z_2})$, we conclude that the vectors $z_1 - z$ and $z - z_2$ are antiparallel, which occurs when (and only when) $z$ lies inside the segment $z_1z_2$.
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, p8.15)
+Definition: given complex numbers $z_0, z_1, z_2$, a complex number $V(z_0, z_1, z_2) = \frac{z_2 - z_0}{z_1 - z_0}$ is called the \textbf{ratio} of these three complex numbers or the points they represent.
+
+Prove that the angle between the lines that pass through the points $z_0, z_1$ and $z_0, z_2$ is equal to the argument of the complex number $V(z_0, z_1, z_2)$.
+\end{exercise}
+\begin{solution}
+    Note that if $u = r_u(\cos \theta_u + i \sin \theta_u), v = r_v(\cos \theta_v + i \sin \theta_v)$ are two complex numbers, then their product is a number $r_ur_v(\cos(\theta_u + \theta_v) + i \sin(\theta_u + \theta_v)$, that is, it is a number with modulus equal to the product of operand moduli and the argument equal to the sum of arguments of the operands. Note also that $\arg(1/z) = -\arg(z)$, for any non-zero complex $z$, and so $\arg(\frac{z_2 - z_0}{z_1 - z_0}) = \arg(z_2 - z_0) + \arg(\frac{1}{z_1 - z_0}) = \arg(z_2 - z_0) - \arg(z_1 - z_0)$, i.e., the argument of $V(z_0, z_1, z_2)$ is the difference between the counterclockwise angles the lines $z_0z_2$ and $z_0z_1$ form with the positive $x$ axis. But this is equivalent to the angle (positive or negative, dependent of the orientation of the lines) between the lines $z_0z_1$ and $z_0z_2$.
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 8.19)
+Definition: Let $z_0, z_1, z_2, z_3$ be four distinct complex numbers. We define their \textbf{cross-ratio} $W(z_0, z_1, z_2, z_3)$ as follows: $W(z_0, z_1, z_2, z_3) = \frac{V(z_2, z_0, z_1)}{V(z_3, z_0, z_1)} = \frac{z_0 - z_2}{z_1 - z_2} : \frac{z_0 - z_3}{z_1 - z_3}$.
+
+Prove that $z_0, z_1, z_2, z_3$ lie on the same line or circle iff $W(z_0, z_1, z_2, z_3)$ is a real number.
+\end{exercise}
+\begin{solution}
+    TODO!!!
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 8.29)
+Definition: the power of a point $A$ w.r.t. a circle with center $O$ and radius $R$ is the difference $|OA|^2 - R^2$.
+
+Prove that the power of a point $w$ w.r.t. a circle defined by the equation $Az\overline{z} + Bz - \overline{B}\overline{z} + C = 0$ is equal to
+\[w\overline{w} + \frac{B}{A}w - \frac{\overline{B}}{A}\overline{w} + \frac{C}{A}.\]
+\end{exercise}
+\begin{solution}
+    Note that the equation of a circle with center $z'$ and radius $R$ in the complex plane is $|z - z'|^2 = R^2$. Now, let's divide the given equation by $A$ and rewrite as follows:
+    \begin{align*}
+        0 &= z\overline{z} + \frac{B}{A}z - \frac{\overline{B}}{A}\overline{z} + \frac{C}{A} =\\
+        &= z\Big(\overline{z} + \frac{B}{A}\Big) - \frac{\overline{B}}{A}\Big(\overline{z} + \frac{B}{A}\Big) + \frac{B\overline{B}}{A^2} + \frac{C}{A} =\\
+        &= \Big(z - \frac{\overline{B}}{A}\Big)\Big(\overline{z} + \frac{B}{A}\Big) + \frac{|B|^2 + AC}{A^2} =\\
+        &= \Big(z - \frac{\overline{B}}{A}\Big)\overline{\Big(z - \frac{\overline{B}}{A}\Big)} + \frac{|B|^2 + AC}{A^2} =\\
+        &= \Big|z - \frac{\overline{B}}{A}\Big|^2 - \frac{|B|^2 + AC}{|A|^2},
+    \end{align*}
+where the last equality follows since $A$ is imaginary, and so $A^2 = -|A|^2$. Thus, the original equation describes a circle with center at $\frac{\overline{B}}{A}$ and radius $\sqrt{\frac{|B|^2 + AC}{A^2}}$. Now, the power of $w$ w.r.t. this circle would be 
+\begin{align*}
+    \Big|w - \frac{\overline{B}}{A}\Big|^2 - \frac{|B|^2 + AC}{|A|^2} &= w\overline{w} - w\frac{B}{\overline{A}} - \overline{w}\frac{\overline{B}}{A} + \frac{|B|^2}{|A|^2} - \frac{|B|^2 + AC}{|A|^2} =\\
+    &= w\overline{w} + \frac{B}{A}w - \frac{\overline{B}}{A}\overline{w} + \frac{C}{A},
+\end{align*}
+as required.
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 8.52)
+Find the maximum and minimum value of the functions: 
+\begin{enumerate}
+    \item[a)] $f_1(x) = a\cos x + b\sin x$;
+    \item[b)] $f_2(x) = a\cos^2 x + b\cos x\sin x + c\sin^2 x$.
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+    \begin{enumerate}
+        \item[a)] Note that $a\cos x + b\sin x = \langle (a, b), (\cos x, \sin x)\rangle = \cos \alpha \sqrt{a^2 + b^2}\sqrt{\cos^2 x + \sin^2 x} = \cos \alpha \sqrt{a^2 + b^2}$, where $\alpha$ is the angle between the vectors $(a, b)$ and $(\cos x, \sin x)$. It is immediately obvious, since $-1 \leq \cos \alpha \leq 1$, that the maximum value of $f_1$ is attained when $\alpha = 0$ (in this case $f_1(x) = \sqrt{a^2 + b^2}$), and the minimum value of $f_1$ is attained when $\alpha = \pi$ (in this case $f_1(x) = -\sqrt{a^2 + b^2}$).
+        \item[b)] TODO!!!
+    \end{enumerate}
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 8.53)
+Let $\cos x + \cos y = a, \sin x + \sin y = b$. Compute $\cos (x + y)$ and $\sin (x + y)$.    
+\end{exercise}
+\begin{solution}
+Note that $a^2 + b^2 = (\cos x + \cos y)^2 + (\sin x + \sin y)^2 = \cos^2x + \sin^2x + \cos^2y + \sin^2y + 2(\cos x\cos y + \sin x\sin y) = 2 + 2\cos(x - y)$, whence $\cos (x - y) = \frac{a^2 + b^2}{2} - 1$.
+
+Next, 
+\begin{align*}
+    ab &= (\cos x + \cos y)(\sin x + \sin y) = \cos x\sin x + \cos y\sin y + (\cos x\sin y + \sin x \cos y) \\
+    &= \frac{1}{2}\sin 2x + \frac{1}{2}\sin 2y + \cos(x - y) = \frac{1}{2}(\sin(x + y + (x - y)) + \sin(x + y - (x - y))) + \cos(x - y) \\
+    &= \frac{1}{2}2\sin(x + y)\cos(x - y) + \cos(x - y) \\
+    &= \sin(x + y)(\cos(x - y) + 1) = \sin(x + y)\frac{a^2 + b^2}{2}.
+\end{align*}
+The last equality can be rewritten as $\sin(x + y) = \frac{2ab}{a^2 + b^2}$, assuming $a^2 + b^2 \not= 0$. Otherwise we must have  $a = b = 0$ or $\cos x = -\cos y$ and $\sin x = -\sin y$, which imply $y = \pi \pm x$ and $y = \pi + x$TODO!!!
+\end{solution}
+
+\begin{exercise}(\cite{alfutova}, 8.56)
+Consider the function $f(x) = A\cos(x) + B\sin(x)$, where $A, B$ are some constants. Prove that if $f(x)$ is zero at two distinct values $x_1, x_2$, such that $x_1 - x_2 \not= k\pi$ (for any integer $k$), then $f(x)$ is identically zero.
+\end{exercise}
+\begin{solution}
+    Solution 1: Assume that either $A$ or $B$ is non-zero, for otherwise the conclusion follows. Let $C = \sqrt{A^2 + B^2}$. Note that $f(x) = A\cos(x) + B\sin(x) = C \frac{A}{C}\cos(x) + C\frac{B}{C}\sin(x)$. Now, $(\frac{A}{C})^2 + (\frac{B}{C})^2 = 1$. Hence, there must exist $\alpha \in \mathbb{R}$, s.t., $\cos(\alpha) = \frac{A}{C}, \sin(\alpha) = \frac{B}{C}$. Thus, $f(x) = C\cos(\alpha)\cos(x) + C\sin(\alpha)\sin(x) = C\cos(x - \alpha)$. Now, since $x_1, x_2$ are zeros of $f$, and hence are zeros of $\cos(x - \alpha)$, we must have $x_1 - \alpha = \pi/2 + k_1\pi, x_2 - \alpha = k_2\pi$, for some integer $k_1, k_2$. But then $x_1 - x_2 = \pi(k_1 - k_2)$, which is a contradiction. This proves the statement.
+
+    Solution 2: Consider the system of linear equations:
+    $\left\{
+    \begin{array}{l}
+        A\cos(x_1) + B\sin(x_1) = 0 \\
+        A\cos(x_2) + B\sin(x_2) = 0 
+    \end{array}\right.$,
+    which can be rewritten in the matrix form as 
+    \[Mv = \begin{pmatrix}
+        \cos(x_1) & \sin(x_1) \\
+        \cos(x_2) & \sin(x_2)
+    \end{pmatrix}
+    \begin{pmatrix}
+        A \\
+        B
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        0 \\
+        0
+    \end{pmatrix}.\]
+    Note that the determinant of the system is $\cos(x_1)\sin(x_2) - \cos(x_2)\sin(x_1) = \sin(x_2 - x_1) \not= 0$, where the inequality is due to $x_1 - x_2 \not= k\pi$. Thus, the given system is non-degenerate. A non-degenerate system $Mv = 0$ has only the trivial solution, i.e., $v = \begin{pmatrix} A \\ B \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$. Thus, $A = B = 0$ and $f = 0$, as required.
+\end{solution}
+
+\bibliographystyle{apalike}
+\bibliography{refs}
+\end{document}
